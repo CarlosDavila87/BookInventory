@@ -1,4 +1,4 @@
-import java.io.Serializable;
+package Master;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -10,28 +10,27 @@ import java.util.Iterator;
  * @param section Collection of Bookshelves
  * @version 1.0
  */
-public class BookCase implements Iterable<BookShelf>, Serializable{
+public abstract class Case<Shelf> implements Iterable<Shelf>{
 	
 	protected int caseID;
 	protected int shelfCount;
-	protected ArrayList<BookShelf> bookCase;
+	protected ArrayList<Shelf> listOfShelves;
+	protected Genre genre;
 	
 	/**
-	 * 
 	 * @param newCaseID Identifying Number of this Book Case
 	 * @param NumOfShelves Number of shelves in this Book Case
 	 */
-	public BookCase(int newCaseID,int NumOfShelves)
-	{
+	public Case(int newCaseID,int NumOfShelves, Genre genre){
 		caseID = newCaseID;
 		shelfCount = NumOfShelves;
-		bookCase = new ArrayList<BookShelf>();
+		this.genre = genre;
+		listOfShelves = new ArrayList<Shelf>();
 	}
 	
-	public void addBookShelf(BookShelf newBookShelf)
-	{
-		if(newBookShelf != null)
-			bookCase.add(newBookShelf);		
+	public void add(Shelf newShelf){
+		if(newShelf != null)
+			listOfShelves.add(newShelf);		
 	}
 
 	public int getCaseID() {
@@ -50,16 +49,20 @@ public class BookCase implements Iterable<BookShelf>, Serializable{
 		this.shelfCount = shelfCount;
 	}
 
-	public ArrayList<BookShelf> getBookCase() {
-		return bookCase;
+	/**
+	 * this method gets tis Case's list of Shelves
+	 * @return the list of shelves
+	 */
+	public ArrayList<Shelf> getlistOfShelves() {
+		return listOfShelves;
 	}
 
-	public void setBookCase(ArrayList<BookShelf> bookCase) {
-		this.bookCase = bookCase;
+	public void setBookCase(ArrayList<Shelf> bookCase) {
+		this.listOfShelves = bookCase;
 	}
 
 	@Override
-	public Iterator<BookShelf> iterator() {
+	public Iterator<Shelf> iterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,4 +1,4 @@
-import java.io.Serializable;
+package Master;
 import java.util.ArrayList;
 
 /**
@@ -9,20 +9,19 @@ import java.util.ArrayList;
  * @param genreName Book Genre Name
  * @param caseCount Current Book Cases in this genre section
  */
-public abstract class BookSection implements Iterable<BookCase>, Serializable {
+public abstract class Section<Aisle> implements Iterable<Aisle> {
 	
-	private ArrayList<BookCase> bookGenre;
-	private String genreName;
+	private ArrayList<Aisle> listOfAisles;
+	private Genre genre;
 	private int caseCount;
 	
 	/**
 	 * Default constructor
 	 * @param newGenreName New name of the genre
 	 */
-	public BookSection(String newGenreName)
-	{
-		bookGenre = new ArrayList<BookCase>();
-		genreName = newGenreName;
+	public Section(Genre genre){
+		listOfAisles = new ArrayList<Aisle>();
+		this.genre = genre;
 		caseCount = 0;
 	} 
 	/**
@@ -30,44 +29,42 @@ public abstract class BookSection implements Iterable<BookCase>, Serializable {
 	 * @param newGenreName New name of the genre
 	 * @param newCaseCount New Count of Book Cases in this genre section
 	 */
-	public BookSection(String newGenreName, int newCaseCount)
-	{
-		bookGenre = new ArrayList<BookCase>();
-		genreName = newGenreName;
-		caseCount = newCaseCount;
+	public Section(Genre genre, int newCount){
+		listOfAisles = new ArrayList<Aisle>();
+		this.genre = genre;
+		caseCount = newCount;
 	}
 	/**
 	 * adds a new book case to this section
 	 * @param newBookCase new book case to be added
 	 */
-	public void addBookCase(BookCase newBookCase)
-	{
-		if(newBookCase != null)
-			bookGenre.add(newBookCase);
+	public void add(Aisle newAisle){
+		if(newAisle!= null)
+			listOfAisles.add(newAisle);
 	}
 	/**
 	 * this method gets a book case located in this book section
 	 * @return
 	 */
-	public ArrayList<BookCase> getBookGenre() {
-		return bookGenre;
+	public ArrayList<Aisle> getAisle() {
+		return listOfAisles;
 	}
 	/**
 	 * sets book section genre name
 	 * @param bookGenre new book genre
 	 */
-	public void setBookGenre(ArrayList<BookCase> bookGenre) {
-		this.bookGenre = bookGenre;
+	public void setAisle(ArrayList<Aisle> newAisles) {
+		this.listOfAisles = newAisles;
 	}
 	/**
 	 * this method returns the section genre name
 	 * @return this sections genre as a string
 	 */
 	public String getGenreName() {
-		return genreName;
+		return genre.getGenrename();
 	}
-	public void setGenreName(String genreName) {
-		this.genreName = genreName;
+	public void setGenreName(String newGenreName) {
+		genre.setGenrename(newGenreName);
 	}
 	/**
 	 * this method returns the count of book cases

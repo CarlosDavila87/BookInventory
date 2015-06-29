@@ -1,3 +1,4 @@
+package Master;
 /**
  * this abstract serves as a general baseline for representing an actual person using the system
  * @author Carlos

@@ -1,3 +1,4 @@
+package Master;
 
 public enum Genre {
 	HORROR("Horror"),
@@ -9,17 +10,17 @@ public enum Genre {
 	SCIENCE("Science"),
 	TRUECRIME("True-Crime");
 
-	private String genrename;
+	private String name;
 	
 	private Genre(String topic){
-		genrename = topic;
+		name = topic;
 	}
 
 	public String getGenrename() {
-		return genrename;
+		return name;
 	}
 
 	public void setGenrename(String genrename) {
-		this.genrename = genrename;
+		this.name = genrename;
 	}
 }

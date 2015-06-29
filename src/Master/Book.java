@@ -1,3 +1,4 @@
+package Master;
 /**
  * This class represents a Book object in the Book Inventory
  * @author Carlos
@@ -32,9 +33,10 @@ public class Book {
 	 * @param Name Name the name of this book
 	 * @param pn assigned company part number
 	 */
-	public Book(String bookName, int pn){
+	public Book(String bookName, int pn, Genre genre){
 		this.name = bookName;
 		this.pn = pn;
+		this.genre = genre;
 	}
 	/**
 	 * this constructs a Book object when the Book Name, Company part Number, and Width, Height, Length  are known
@@ -43,48 +45,50 @@ public class Book {
 	 * @param newHeight
 	 * @param newWidth
 	 * @param newLength
+	 * @param genre
 	 */
-	public Book(String bookName, int pn, double newHeight, double newWidth, double newLength    ){
+	public Book(String bookName, int pn, double newHeight, double newWidth, double newLength, Genre genre){
 		this.name = bookName;
 		this.pn = pn;
 		this.height = newHeight;
 		this.width = newWidth;
 		this.length = newLength;
+		this.genre = genre;
 	}
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
-	protected void setName(String newName) {
+	public void setName(String newName) {
 		this.name = newName;
 	}
-	protected int getIsbn() {
+	public int getIsbn() {
 		return isbn;
 	}
-	protected void setIsbn(int isbn) {
+	public void setIsbn(int isbn) {
 		this.isbn = isbn;
 	}
-	protected int getPn() {
+	public int getPn() {
 		return pn;
 	}
-	protected void setPn(int pn) {
+	public void setPn(int pn) {
 		this.pn = pn;
 	}
-	protected double getHeight() {
+	public double getHeight() {
 		return height;
 	}
-	protected void setHeight(double height) {
+	public void setHeight(double height) {
 		this.height = height;
 	}
-	protected double getWidth() {
+	public double getWidth() {
 		return width;
 	}
-	protected void setWidth(double width) {
+	public void setWidth(double width) {
 		this.width = width;
 	}
-	protected double getLength() {
+	public double getLength() {
 		return length;
 	}
-	protected void setLength(double length) {
+	public void setLength(double length) {
 		this.length = length;
 	}
 	
