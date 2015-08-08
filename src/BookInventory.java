@@ -8,7 +8,7 @@ import Master.Shelf;
 
 
 public class BookInventory {
-
+/*
 	public static void main(String[] args){
 		
 		//create Action Section
@@ -53,5 +53,8 @@ public class BookInventory {
 		for(Book book: actionShelf1){
 			System.out.println(book.getName());
 		}
+		
+		InventoryWindow inv = new InventoryWindow("Test");
 	}
+	*/
 }

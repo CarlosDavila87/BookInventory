@@ -64,7 +64,7 @@ public abstract class Case<Shelf> implements Iterable<Shelf>{
 	@Override
 	public Iterator<Shelf> iterator() {
 		// TODO Auto-generated method stub
-		return null;
+		return listOfShelves.iterator(); 
 	}
 
 	

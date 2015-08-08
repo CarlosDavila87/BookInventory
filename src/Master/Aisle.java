@@ -52,7 +52,7 @@ public abstract class Aisle<Case> implements Iterable<Case> {
 	@Override
 	public Iterator<Case> iterator() {
 		// TODO Auto-generated method stub
-		return null;
+		return listOfCases.iterator();
 	}
 
 }

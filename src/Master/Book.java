@@ -4,7 +4,7 @@ package Master;
  * @author Carlos
  *
  */
-public class Book {
+public class Book  {
 	private String name;
 	private Genre genre;
 	private int isbn;

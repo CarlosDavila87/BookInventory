@@ -9,8 +9,7 @@ import java.util.Iterator;
  */
 public abstract class Shelf<T> implements Iterable<T>{
 	private ArrayList<T> listOfObjects;
-	private int shelfID;
-	
+	private int shelfID;	
 	/**
 	 * Default Constructor for a single Book Shelf
 	 * @param newShelfID New Shelf Identifying Number
@@ -38,11 +37,11 @@ public abstract class Shelf<T> implements Iterable<T>{
 			listOfObjects.add((T) newObject);		
 	}
 	
-	
+	// This method allows you to return an iterator for this Book shelf
 	@Override
 	public Iterator<T> iterator() {
 		// TODO Auto-generated method stub
-		return null;
+		return listOfObjects.iterator();
 	}
 	/**
 	 * this method gets this book shelf as an object containing its books

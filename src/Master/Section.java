@@ -1,5 +1,6 @@
 package Master;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * A Genre of 'X' amount of Book Cases
@@ -81,6 +82,9 @@ public abstract class Section<Aisle> implements Iterable<Aisle> {
 		this.caseCount = newCaseCount;
 	}
 	
+	public Iterator<Aisle> iterator() {
+		// TODO Auto-generated method stub
+		return listOfAisles.iterator(); 
 	
-
+	}
 }
